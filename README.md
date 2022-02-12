@@ -4,7 +4,7 @@ ts的基础使用和一些帮助类型
 ## use
 ```
 npm i ts-node -g
-node xxx.ts
+ts-node xxx.ts
 ```
 
 ## include
