@@ -10,6 +10,7 @@ node xxx.ts
 ## include
 
 * 基础使用
+* function
 * record
 * partial
 * omit
