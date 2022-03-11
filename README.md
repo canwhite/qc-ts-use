@@ -17,13 +17,15 @@ ts-node xxx.ts
 
 ## include
 
+* as
 * base use
 * function
 * record
-* partial
-* omit
+* partial （部分的）
+* omit（忽略）
 * extends
 * infer
+
 
 
 
