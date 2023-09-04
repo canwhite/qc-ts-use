@@ -7,7 +7,7 @@ type User = {
     name: string;    
     email: string;
 };
-//从一个对象类型User中去除掉email属性
+//将一个type，通过Omit生成另外一个type
 type UserWithoutEmail = Omit<User, "email">;
 
 /* 

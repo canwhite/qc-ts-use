@@ -14,11 +14,12 @@ console.log("--str--",str);
 
 
 
-//数组字典
+//数组字典,注意string和number是小写
 type obj = {
     name:string,
     age:number,
 }
+//obj
 type arr = obj[];
 
 let marr:arr = [
