@@ -110,8 +110,51 @@ const person: Pick<IPerson, "name" | "age"> = {
   age: 18
 }
 
----------------------------5.Record<K extends keyof any, T>------------
 
+---------------------------5.Exclude<T, U>-----------------------------
+
+type Exclude<T, U> = T extends U ? never : T;
+
+//use
+interface IPerson {
+  name: string;
+  age: number;
+  height: number;
+}
+
+const person: Exclude<IPerson, "age" | "sex"> = {
+  name: "zhangsan";
+  height: 180;
+}
+
+---------------------------6.Omit<T, K extends keyof any>--------------
+type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
+
+//use
+interface IPerson {
+  name: string;
+  age: number;
+  height: number;
+}
+
+const person: Omit<IPerson, "age" | "height"> = {
+  name: "zhangsan";
+}
+
+---------------------------7.ReturnType--------------------------------
+
+type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
+
+//use
+function foo(type): boolean {
+  return type === 0
+}
+
+type FooType = ReturnType<typeof foo>
+
+
+
+---------------------------8.Record<K extends keyof any, T>------------
 
 type Record<K extends keyof any, T> = {
     [P in K]: T;
@@ -129,48 +172,6 @@ const page: Record<IPage, IPageinfo> = {
     contact: {title: 'contact'},
     home: {title: 'home'},
 }
-
-
----------------------------6.Exclude<T, U>-----------------------------
-
-type Exclude<T, U> = T extends U ? never : T;
-
-//use
-interface IPerson {
-  name: string;
-  age: number;
-  height: number;
-}
-
-const person: Exclude<IPerson, "age" | "sex"> = {
-  name: "zhangsan";
-  height: 180;
-}
-
----------------------------7.Omit<T, K extends keyof any>--------------
-type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>;
-
-//use
-interface IPerson {
-  name: string;
-  age: number;
-  height: number;
-}
-
-const person: Omit<IPerson, "age" | "height"> = {
-  name: "zhangsan";
-}
-
----------------------------8.ReturnType--------------------------------
-
-type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any;
-
-//use
-function foo(type): boolean {
-  return type === 0
-}
-
-type FooType = ReturnType<typeof foo>
 
 
 ```
