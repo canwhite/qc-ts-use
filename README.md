@@ -314,18 +314,6 @@ export const SidebarComponent: React.FC<Props> = props => {
 
   */
 
-  //最后加一个TS的返回类型，这个和React本身没有关系
-  /**
-  function foo(type): boolean {
-    return type === 0
-  }
-
-  type FooType = ReturnType<typeof foo>
-
-  //PS，
-  typeof用于获取值的类型，
-  keyof 操作符用于获取一个类型的所有键（属性名）组成的联合类型
-  */
 
   return (
     <div id="mySidenav" style={divStyle()}>
