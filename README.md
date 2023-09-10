@@ -188,38 +188,40 @@ interface Props {
 }
 
 export const SidebarComponent: React.FC<Props> = props => {
-  //---------------css----------------------
+  //0.css
   const divStyle = (): React.CSSProperties => ({
     width: props.isVisible ? '23rem' : '0rem',
   });
 
-  //--------------useState------------------
-  /**
-  const [count, setCount] = React.useState<number | null>(null);
-  */
 
-  //--------------useMemo-------------------
-  /**
+  /**=========================================================== 
+  //1.useState
+
+  const [count, setCount] = React.useState<number | null>(null);
+
+
+  //2.useMemo
+
   const calculatedValue = useMemo<string>(() => a + "hello", [a]);
 
-   */
 
-  //---------------useRef--------------------
-  //const nameInput = React.useRef<HTMLInputElement | null>(null);
+  //3.useRef
+  const nameInput = React.useRef<HTMLInputElement | null>(null);
 
-  //------------useCallback------------------
-  /**
-   const memoizedCallback = useCallback(
+
+
+  //4.useCallback
+  const memoizedCallback = useCallback(
     //这里如果需要参数需要定义下
     (a: number) => {
       add(a, b);
     },
     [b]
   );
-   */
 
-  //------------useContext---------------------
-  /**
+
+  //5.useContext
+
   //useContext会自动推端
   const ColorContext = React.createContext({ color: "green" });
 
@@ -234,10 +236,10 @@ export const SidebarComponent: React.FC<Props> = props => {
   }
 
   const ColorContext = React.createContext<IColor>({ color: "green" });
-  */
 
-  /** ----------- Evnet ----------------------------*/
-  /**
+
+  //6.Evnet 
+
   剪切板事件对象：ClipboardEvent<T = Element>
   拖拽事件对象：DragEvent<T = Element>
   焦点事件对象：FocusEvent<T = Element>
@@ -249,9 +251,8 @@ export const SidebarComponent: React.FC<Props> = props => {
   滚轮事件对象：WheelEvent<T = Element>
   动画事件对象：AnimationEvent<T = Element>
   过渡事件对象：TransitionEvent<T = Element>
-   */
 
-  /**
+
   type State = {
     text: string;
   };
@@ -268,9 +269,9 @@ export const SidebarComponent: React.FC<Props> = props => {
       </div>
     );
   }
-  */
-  /** ----------- Element ----------------------------*/
-  /*
+
+  //7.Element
+
   a: HTMLAnchorElement;
   body: HTMLBodyElement;
   br: HTMLBRElement;
@@ -295,7 +296,6 @@ export const SidebarComponent: React.FC<Props> = props => {
   meta: HTMLMetaElement;
   form: HTMLFormElement;
 
-
   这些标签都继承自HTMLElement类型，如果使用时对类型类型要求不高，可以直接写HTMLELement
 
     <Button
@@ -312,7 +312,7 @@ export const SidebarComponent: React.FC<Props> = props => {
        取消修改
     </Button>
 
-  */
+  =========================================================== */
 
 
   return (
