@@ -32,7 +32,7 @@ ts-node xxx.ts
 PRE：    
 typeof用于获取值的类型      
 keyof 操作符用于获取一个类型的所有键（属性名）,返回的是一个集合   
-extend 实际上是个约束，得到子集   
+extends 实际上是个约束，得到子集   
 
 ```
 
