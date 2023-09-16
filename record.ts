@@ -33,5 +33,9 @@ const animalsInfo:IPets = {
 console.log("animal",animalsInfo);
 
 
+//test1
+//test2
+//tett3
+//test4
 
 
